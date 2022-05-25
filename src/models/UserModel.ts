@@ -1,4 +1,4 @@
-import mongoose, { Schema, model} from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 
 export interface User extends mongoose.Document {
   name: string,
@@ -9,8 +9,7 @@ export interface User extends mongoose.Document {
   compras: string,
   datosTarjesta: string,
   ingresos: number,
-  add(): User;
-};
+}
 
 const userSchema = new Schema({
   name: {
@@ -30,30 +29,29 @@ const userSchema = new Schema({
   },
   domicilio: {
     type: String,
-    unique: true,
+    unique: false,
     required: true,
   },
   permisos: {
     type: String,
-    unique: true,
+    unique: false,
     required: true,
   },
   compras: {
     type: String,
-    unique: true,
+    unique: false,
     required: true,
   },
   datosTarjeta: {
     type: String,
-    unique: true,
+    unique: false,
     required: true,
   },
   ingresos: {
     type: Number,
-    unique: true,
+    unique: false,
     required: true,
   },
 });
 
-export default model<User>("users", userSchema)
-
+export default model<User>("users", userSchema);

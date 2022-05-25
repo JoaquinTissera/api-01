@@ -1,0 +1,6 @@
+.eslintrc
+database.ts
+**/.git
+**/.svn
+**/.hg
+**/node_modules

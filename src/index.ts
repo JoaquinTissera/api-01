@@ -9,14 +9,14 @@ import users_routes from "./routes/user.router";
 app.set("port", process.env.PORT || 3010);
 
 app.use(express.json());
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }));
 
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "public")));
 
-// Router
+//Router
 
-app.use('/', users_routes)
+app.use("/", users_routes);
 
-app.listen(app.get("port"),() => {
+app.listen(app.get("port"), () => {
   console.log(`Server on  port ${app.get("port")}`);
-})
+});
