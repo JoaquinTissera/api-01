@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import app from "./app.local";
+import cors from "cors";
 import "./database";
 import "./config/initializer";
 
@@ -8,6 +9,7 @@ import users_routes from "./routes/user.router";
 
 app.set("port", process.env.PORT || 3010);
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
